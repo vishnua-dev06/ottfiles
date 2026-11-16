@@ -12,6 +12,7 @@ Commands:
 import os
 import asyncio
 import subprocess
+import sys
 import uuid
 from datetime import datetime
 from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
@@ -193,7 +194,7 @@ async def start_download(update, platform: str, url: str, quality: str, ctype: s
 
 async def run_download(job_id, platform, url, quality, ctype, status_msg):
     script = f"scripts/{_platform_folder(platform)}/{platform}.py"
-    cmd = ["python", script, "--url", url, "--quality", quality, "--type", ctype]
+    cmd = [sys.executable, script, "--url", url, "--quality", quality, "--type", ctype]
 
     try:
         proc = await asyncio.create_subprocess_exec(
@@ -295,3 +296,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
