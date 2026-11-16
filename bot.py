@@ -50,7 +50,7 @@ async def start(update: Update, ctx: ContextTypes.DEFAULT_TYPE):
         return
 
     text = (
-        "🎬 *OTT Downloader Bot*\n\n"
+        "🎬 *OTT  Bot*\n\n"
         "Download from 20+ OTT platforms directly via Telegram.\n\n"
         "*Quick commands:*\n"
         "`/rip <platform> <url>` — Start a download\n"
